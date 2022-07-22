@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backkkkk"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:text="@string/app_name"
+        android:paddingEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    </TextView>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/backbutton"
+        android:clickable="true"
+        android:rotation="180"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/backbutton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/homebutton"
+        android:clickable="true"
+        app:layout_constraintStart_toEndOf="@id/backbutton"
+        android:src="@drawable/homebutton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/tabs"
+        android:clickable="true"
+        android:rotation="90"
+        app:layout_constraintStart_toEndOf="@id/homebutton"
+        android:src="@drawable/tabs"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/wifiimage"
+        android:clickable="true"
+        app:layout_constraintEnd_toStartOf="@id/textView"
+        android:src="@drawable/smileimage"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+       <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_weight="1">
+
+       </FrameLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/music_icon_big"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="150dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/homemusicback"
+                android:layout_gravity="center"
+                android:layout_marginTop="6dp"
+                android:padding="20dp"
+                android:src="@drawable/music_icon_big" />
+
+            <SeekBar
+                android:layout_width="138dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/seek_bar"
+                android:layout_marginStart="150dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/music_icon_big"
+                android:backgroundTint="@color/white"/>
+
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/seek_bar"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="70dp">
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/ic_baseline_skip_previous_24"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="40dp"
+                    android:layout_toStartOf="@id/pause_play"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/previous"/>
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/ic_baseline_skip_next_24"
+                    android:layout_marginEnd="40dp"
+                    android:layout_toEndOf="@id/pause_play"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:id="@+id/next"/>
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/ic_baseline_pause_circle_outline_24"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/pause_play"/>
+
+
+            </RelativeLayout>
+
+
+        <in.unicodelabs.kdgaugeview.KdGaugeView
+            android:id="@+id/speedMeter"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="44dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/background"
+            android:backgroundTint="@color/white"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            app:animationTime="2000"
+            app:maxSpeed="180"
+            app:minSpeed="0"
+            app:speed="100"
+            app:speed_limit="90" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+    <com.alan.alansdk.button.AlanButton
+        android:id="@+id/alan_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="170dp"
+        android:id="@+id/settingimage"
+        android:clickable="true"
+        android:focusable="true"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/settingspage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="170dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/songsimage"
+        android:clickable="true"
+        android:focusable="true"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/audioimagee"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toStartOf="@id/alan_button"
+        app:layout_constraintStart_toEndOf="@id/songsimage"
+        android:id="@+id/navigation"
+        android:clickable="true"
+        android:focusable="true"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/location"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:src="@drawable/homebottomback"
+        app:layout_constraintBottom_toBottomOf="@id/alan_button"
+        >
+
+    </ImageView>
+
+
+
+    <TextView
+        android:id="@+id/editText"
+        android:layout_height="2dp"
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/black"
+        android:text="TextView" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
